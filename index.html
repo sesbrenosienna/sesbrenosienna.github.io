@@ -1,0 +1,298 @@
+<html>
+    <head>
+        <title>
+            Website Resume 
+       </title>
+       <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+       <link rel="stylesheet" type="text/css" href="resumefinal.css"/> 
+       <script src="resumefinal.js"></script>
+    </head>
+
+    <body>
+        <div class="menu">
+            <a href="#clip1" onclick="afunction()" class="category" id="category1"> About Me </a>
+            <a href="#aboutdetails" onclick="efunction()" class="category" id="category2"> Education </a>
+            <a href="#educdetails" onclick="ofunction()" class="category" id="category3"> Organizations </a>
+            <a href="#orgdetails" onclick="wfunction()" class="category" id="category4"> Work </a>
+            <a href="#workdetails" onclick="pfunction()" class="category" id="category5"> Projects </a>
+        </div>
+
+        <div class="background" id="bg">
+
+            <div class="circle">
+                <img src="selfie.jpg" width="200px" height="200px" id="mypic">
+            </div>
+
+            <div class="name">
+                Ana Sienna Sesbreno
+            </div>
+
+            <!-- contact details fix later -->
+            <div class="contact">
+                <a href="" " class="clip" id="clip1"><img src="twitter.png" width="50px" height="50px"> </a>  
+                <a href="" class="clip" id="clip2"> <img src="linkedin.png" width=80px" height="80px"> </a>  
+                <a href="" class="clip" id="clip3"> <img src="github.png" width="55px" height="55px"> </a>
+            </div>  
+        </div>
+
+        <!-- About Me Div-->
+        <div id="first">
+            <span id="about"> About </span>
+            <div class="design" id="aboutdetails">
+                
+            </div>
+        </div>
+
+        <!-- Education Div -->
+        <div id="second">
+            <span id="educ"> Educational Attainment </span>
+            <img src="school_logo.png" id="schoologo" width="215px" height="115px">
+            <div class="design" id="educdetails">
+
+            </div>
+        </div>
+        
+         <!--Organizations Div-->
+        <div id="third">
+            <span id="org"> Organizations Joined </span>
+            <div class="design" id="orgdetails">
+                    
+            </div>
+        </div>
+
+         <!-- Work Div -->
+         <div id="fourth">
+            <span id="work"> Work Experience </span>
+        
+            <div class="design" id="workdetails">
+            </div> 
+         </div>
+
+         <!-- Projects Div -->
+         <div id="fifth">
+            <span id="project"> Projects Made </span>
+            <div class="design" id="projectdetails">
+                
+            </div>
+         </div>
+
+
+         <div id="footer">
+           <a href="#bg" id="top"> Back to Top </a>
+         </div>
+
+
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyAWcLh0jnKBQ7KsKCv-nGwUNqtbdBaoyrk",
+                authDomain: "website-resume-359ea.firebaseapp.com",
+                databaseURL: "https://website-resume-359ea.firebaseio.com",
+                projectId: "website-resume-359ea",
+                storageBucket: "website-resume-359ea.appspot.com",
+                messagingSenderId: "453404643227",
+                appId: "1:453404643227:web:37d94019df365252625b3e",
+                measurementId: "G-CBK5H47QQ7"
+            };
+
+
+            // Initialize Firebase
+            var defaultProject = firebase.initializeApp(firebaseConfig);
+            
+            var db = firebase.firestore(); 
+            
+            const aboutcontent = document.querySelector('#aboutdetails'); 
+            const educontent = document.querySelector('#educdetails'); 
+
+            const orgcontent = document.querySelector('#orgdetails'); 
+            const workcontent = document.querySelector('#workdetails');
+            const projectcontent = document.querySelector('#projectdetails');
+
+            // create element and render education
+            function renderAbout(doc){
+                let aboutdetails = document.createElement('p');
+                let intro = document.createElement('span'); 
+
+                aboutdetails.setAttribute('data-id', doc.id); 
+                intro.textContent = doc.data().value; 
+
+                aboutcontent.appendChild(intro); 
+            }
+
+            // create element and render education
+            function renderEducation(doc){
+                let educdetails = document.createElement('p');
+                let level = document.createElement('span'); 
+                let school = document. createElement('span'); 
+                let educstart = document.createElement('span'); 
+                let educend = document.createElement('span');
+                let educspace = document.createElement('span');
+
+
+                level.id = "educid1";
+                school.id = "educid2";  
+                educstart.id = "educid3"; 
+                educend.id = "educid4"; 
+
+                educdetails.setAttribute('data-id', doc.id); 
+                level.textContent = doc.data().Level; 
+                school.textContent = doc.data().School; 
+                educstart.textContent = doc.data().Start_Year;
+                educend.textContent = doc.data().End_Year; 
+
+                educontent.appendChild(educdetails); 
+                educontent.appendChild(level); 
+                educontent.appendChild(school); 
+                educontent.appendChild(educstart); 
+                educontent.appendChild(educend); 
+
+            }
+
+            // create element and render organization
+            function renderOrganization(doc){
+                let orgdetails = document.createElement('p');
+                let orgname = document.createElement('div'); 
+                let orgposition = document. createElement('div'); 
+                let orgstart = document.createElement('div'); 
+                let orgend = document.createElement('div');
+
+
+                orgname.id = "orgid1";
+                orgposition.id = "orgid2";  
+                orgstart.id = "orgtid3"; 
+                orgend.id = "orgid4";
+
+                orgdetails.setAttribute('data-id', doc.id); 
+                orgname.textContent = doc.data().name; 
+                orgposition.textContent = doc.data().position; 
+                orgstart.textContent = doc.data().Start_Year;
+                orgend.textContent = doc.data().End_Year; 
+
+                orgcontent.appendChild(orgname); 
+                orgcontent.appendChild(orgposition); 
+                orgcontent.appendChild(orgstart); 
+                orgcontent.appendChild(orgend); 
+            }
+
+            // create element and render work
+            function renderWork(doc){
+                let workdetails = document.createElement('p');
+                let workname = document.createElement('span'); 
+                let workposition = document. createElement('span'); 
+                let workstart = document.createElement('span'); 
+                let workend = document.createElement('span');
+
+                workname.id = "workid1";
+                workposition.id = "workid2";  
+                workstart.id = "workid3"; 
+                workend.id = "workid4";
+
+                workdetails.setAttribute('data-id', doc.id); 
+                workname.textContent = doc.data().name; 
+                workposition.textContent = doc.data().position; 
+                workstart.textContent = doc.data().Start_Year;
+                workend.textContent = doc.data().End_Year; 
+
+                workcontent.appendChild(workname); 
+                workcontent.appendChild(workposition); 
+                workcontent.appendChild(workstart); 
+                workcontent.appendChild(workend); 
+            }
+
+             // create element and render work
+             function renderProject(doc){
+                let projectdetails = document.createElement('p');
+                let projectname = document.createElement('span'); 
+                let language = document. createElement('span'); 
+                
+                projectname.id = "projectid1";
+                language.id = "projectid2";  
+
+                projectdetails.setAttribute('data-id', doc.id); 
+                projectname.textContent = doc.data().name; 
+                language.textContent = doc.data().language; 
+                
+                projectcontent.appendChild(projectname);  
+                projectcontent.appendChild(language); 
+            }
+
+            function renderContacts(doc){
+                let contactdetails = document.createElement('p');
+                let twitter = document.createElement('span'); 
+                let linkedin = document.createElement('span'); 
+                let github = document.createElement('span' ); 
+
+                
+                contactdetails.setAttribute('data-id', doc.id); 
+                twitter.textContent = doc.data().twitter; 
+                linkedin.textContent = doc.data().linkedin; 
+                github.textContent = doc.data().github; 
+
+                document.getElementById('clip1').href = twitter.textContent;
+                document.getElementById('clip2').href = linkedin.textContent;
+                document.getElementById('clip3').href = github.textContent;
+
+            }
+
+             db.collection("others").get().then(function(snapshot){
+                snapshot.forEach(function(doc){
+                    console.log(doc.data())
+                    renderContacts(doc);  
+                })
+            }); 
+
+            //how to read an object in the database
+            //reading and printing educations
+            db.collection("others").get().then(function(snapshot){
+                snapshot.forEach(function(doc){
+                    console.log(doc.data())
+                    renderAbout(doc);   
+                })
+            }); 
+
+            //reading and printing educations
+            db.collection("educations").get().then(function(snapshot){
+                snapshot.forEach(function(doc){
+                    console.log(doc.data())
+                    renderEducation(doc);  
+                })
+            }); 
+
+            //reading and printing organizations
+            db.collection("organizations").get().then(function(snapshot){
+                snapshot.forEach(function(doc){
+                    console.log(doc.data())
+                    renderOrganization(doc);  
+                })
+            }); 
+
+             //reading and printing work
+             db.collection("works").get().then(function(snapshot){
+                snapshot.forEach(function(doc){
+                    console.log(doc.data())
+                    renderWork(doc);  
+                })
+            });     
+
+            //reading and printing work
+            db.collection("projects").get().then(function(snapshot){
+                snapshot.forEach(function(doc){
+                    console.log(doc.data())
+                    renderProject(doc);  
+                })
+            });   
+
+        </script>
+    </body>
+</html>
