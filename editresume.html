@@ -1,0 +1,761 @@
+<html>
+    <head>
+        <title>
+            Website Resume 
+       </title>
+       <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+       <link rel="stylesheet" type="text/css" href="resumefinal.css"/> 
+       <script src="resumefinal.js"></script>
+
+    </head>
+
+    <body>
+        <div class="menu">
+            <a href="#clip1" onclick="afunction()" class="category" id="category1"> About Me </a>
+            <a href="#aboutdetails" onclick="efunction()" class="category" id="category2"> Education </a>
+            <a href="#educdetails" onclick="ofunction()" class="category" id="category3"> Organizations </a>
+            <a href="#orgdetails" onclick="wfunction()" class="category" id="category4"> Work </a>
+            <a href="#workdetails" onclick="pfunction()" class="category" id="category5"> Projects </a>
+        </div>
+
+        <div class="background" id="bg">
+
+            <div class="circle">
+                <img src="selfie.jpg" width="200px" height="200px" id="mypic">
+            </div>
+
+            <div class="name">
+                Ana Sienna Sesbreno
+            </div>
+
+            <!-- contact details fix later -->
+            <div class="contact">
+                <a href="" " class="clip" id="clip1"><img src="twitter.png" width="50px" height="50px"> </a>  
+                <a href="" class="clip" id="clip2"> <img src="linkedin.png" width=80px" height="80px"> </a>  
+                <a href="" class="clip" id="clip3"> <img src="github.png" width="55px" height="55px"> </a>
+                <br> 
+                <button type="button" onclick="javascript:openContactForm()"  id="contactbutton"> Edit </button>
+            </div>  
+
+            
+
+            <div class="form-popup" id="myContactForm">
+                  <form class="form-container">
+              
+                  <label for="LabelEdit"><b>Contact Links</b></label><br> 
+                  <input type="url" placeholder="Enter linkedin link" id="editlinkedinContent" required>
+                  <input type="url" placeholder="Enter twitter link" id="edittwitterContent" required>
+                  <input type="url" placeholder="Enter github link" id="editgithubContent" required>
+                 
+                  <button type="button" class="btn" onclick="editContactForm()">Submit</button>
+                  <button type="button" class="btn cancel" onclick="closeContactForm()">Close</button>
+                </form>
+              </div>
+        </div>
+
+        <!-- About Me Div-->
+        <div id="first">
+            <span id="about"> About </span>
+            <button type="button" onclick="javascript:openAboutForm()" id="editbutton"> Edit </button>
+            <div class="design" id="aboutdetails"></div> 
+
+            <div class="form-popup" id="myAboutForm">
+                  <form class="form-container">
+              
+                  <label for="LabelEdit"><b>About</b></label>
+                  <input type="text" placeholder="Enter Introduction" id="editAboutContent" required>
+              
+                  <button type="button" class="btn" onclick="editAboutForm()">Submit</button>
+                  <button type="button" class="btn cancel" onclick="closeAboutForm()">Close</button>
+                </form>
+              </div>
+        </div>
+
+        <!-- Education Div -->
+        <div id="second">
+            <span id="educ"> Educational Attainment </span>
+            <img src="school_logo.png" id="schoologo" width="215px" height="115px">
+            <button type="button" onclick="javascript:openEducForm()"  id="educbutton"> Add </button>
+            <button type="button" onclick="javascript:openEducDeleteForm()" id="educDeletebutton"> Delete </button>
+            <div class="design" id="educdetails"></div>
+
+            <button type="button" onclick="javascript:openEducForm()"  id="educbutton"> Add </button>
+
+            <div class="form-popup" id="myEducForm">
+                <form class="form-container">
+            
+                <label for="LabelEdit"><b>Information on Education</b></label>
+                <input type="text" placeholder="Enter Level" id="editLevelContent" required>
+                <input type="text" placeholder="Enter Name" id="editNameContent" required>
+                <input type="number" placeholder="Enter Start Year" id="editEducStartContent" required>
+                <input type="number" placeholder="Enter End Year" id="editEducEndContent" required>
+
+                <button type="button" class="btn" onclick="editEducForm()">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeEducForm()">Close</button>
+              </form>
+            </div>
+            
+            <div class="form-popup" id="myEducDeleteForm">
+                <form class="form-container">
+            
+                <label for="LabelEdit"><b>What to Delete</b></label>
+                <input type="text" placeholder="Enter Level" id="deleteLevelContent" required>
+                <input type="text" placeholder="Enter Name" id="deleteNameContent" required>
+                <input type="number" placeholder="Enter Start Year" id="deleteEducStartContent" required>
+                <input type="number" placeholder="Enter End Year" id="deleteEducEndContent" required>
+
+                <button type="button" class="btn" onclick="deleteEducForm()">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeDeleteEducForm()">Close</button>
+              </form>
+            </div>
+        </div>
+        
+         <!--Organizations Div-->
+        <div id="third">
+            <span id="org"> Organizations Joined </span>
+            <div class="design" id="orgdetails"></div>
+
+            <button type="button" onclick="javascript:openOrgForm()"  id="orgbutton"> Add </button>
+
+            <div class="form-popup" id="myOrgForm">
+                <form class="form-container">
+            
+                <label for="LabelEdit "><b>Information on Organizations</b></label>
+                <input type="text" placeholder="Enter Name of Organization" id="editOrgNameContent" required>
+                <input type="text" placeholder="Enter Position" id="editOrgPositionContent" required>
+                <input type="number" placeholder="Enter Start Year" id="editOrgStartContent" required>
+                <input type="number" placeholder="Enter End Year" id="editOrgEndContent" required>
+            
+                <button type="button" class="btn" onclick="editOrgForm()">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeOrgForm()">Close</button>
+              </form>
+            </div>
+
+            <button type="button" onclick="javascript:openOrgDeleteForm()" id="educOrgbutton"> Delete </button>
+            
+            <div class="form-popup" id="myOrgDeleteForm">
+                <form class="form-container">
+            
+                <label for="LabelEdit"><b>What to Delete</b></label>
+                <input type="text" placeholder="Enter Organization Name" id="deleteOrgNameContent" required>
+                <input type="text" placeholder="Enter Position" id="deleteOrgPositionContent" required>
+                <input type="number" placeholder="Enter Start Year" id="deleteOrgStartContent" required>
+                <input type="number" placeholder="Enter End Year" id="deleteOrgEndContent" required>
+
+                <button type="button" class="btn" onclick="deleteOrgForm()">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeDeleteOrgForm()">Close</button>
+              </form>
+            </div>
+        </div>
+
+         <!-- Work Div -->
+         <div id="fourth">
+            <span id="work"> Work Experience </span>
+            <div class="design" id="workdetails"></div> 
+
+            <button type="button" onclick="javascript:openWorkForm()"  id="Workbutton"> Add </button>
+
+            <div class="form-popup" id="myWorkForm">
+                <form class="form-container">
+            
+                <label for="LabelEdit "><b>Work Experience</b></label>
+                <input type="text" placeholder="Enter Name of Company" id="editWorkNameContent" required>
+                <input type="text" placeholder="Enter Position" id="editWorkPositionContent" required>
+                <input type="number" placeholder="Enter Start Year" id="editWorkStartContent" required>
+                <input type="number" placeholder="Enter End Year" id="editWorkEndContent" required>
+            
+                <button type="button" class="btn" onclick="editWorkForm()">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeWorkForm()">Close</button>
+              </form>
+            </div>
+
+            <button type="button" onclick="javascript:openWorkDeleteForm()" id="deleteWorkbutton"> Delete </button>
+            
+            <div class="form-popup" id="myWorkDeleteForm">
+                <form class="form-container">
+            
+                <label for="LabelEdit"><b>What to Delete</b></label>
+                <input type="text" placeholder="Enter Company Name" id="deleteWorkNameContent" required>
+                <input type="text" placeholder="Enter Position" id="deleteWorkPositionContent" required>
+                <input type="number" placeholder="Enter Start Year" id="deleteWorkStartContent" required>
+                <input type="number" placeholder="Enter End Year" id="deleteWorkEndContent" required>
+
+                <button type="button" class="btn" onclick="deleteWorkForm()">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeDeleteWorkForm()">Close</button>
+              </form>
+            </div>
+         </div>
+
+         <!-- Projects Div -->
+         <div id="fifth">
+            <span id="project"> Projects Made </span>
+            <button type="button" onclick="javascript:openProjectForm()"  id="projectbutton"> Add </button>
+            <button type="button" onclick="javascript:openProjectDeleteForm()" id="deleteProjectbutton"> Delete </button>
+
+            <div class="design" id="projectdetails"></div>            
+            <div class="form-popup" id="myProjectForm">
+                <form class="form-container">
+            
+                <label for="LabelEdit "><b>Work Experience</b></label>
+                <input type="text" placeholder="Enter Name of Project" id="editProjectNameContent" required>
+                <input type="text" placeholder="Enter Language Used" id="editLanguageContent" required>
+                
+                <button type="button" class="btn" onclick="editProjectForm()">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeProjectForm()">Close</button>
+              </form>
+            </div>
+         </div>
+            
+            <div class="form-popup" id="myProjectDeleteForm">
+                <form class="form-container">
+            
+                <label for="LabelEdit"><b>What to Delete</b></label>
+                <input type="text" placeholder="Enter Project Name" id="deleteProjectNameContent" required>
+                <input type="text" placeholder="Enter Language Used" id="deleteLanguageContent" required>
+
+                <button type="button" class="btn" onclick="deleteProjectForm()">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeProjectDeleteForm()">Close</button>
+              </form>
+            </div>
+
+
+
+         <div id="footer">
+           <a href="#bg" id="top"> Back to Top </a>
+         </div>
+
+
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyAWcLh0jnKBQ7KsKCv-nGwUNqtbdBaoyrk",
+                authDomain: "website-resume-359ea.firebaseapp.com",
+                databaseURL: "https://website-resume-359ea.firebaseio.com",
+                projectId: "website-resume-359ea",
+                storageBucket: "website-resume-359ea.appspot.com",
+                messagingSenderId: "453404643227",
+                appId: "1:453404643227:web:37d94019df365252625b3e",
+                measurementId: "G-CBK5H47QQ7"
+            };
+
+
+            // Initialize Firebase
+            var defaultProject = firebase.initializeApp(firebaseConfig);
+            
+            var db = firebase.firestore(); 
+            
+            const aboutcontent = document.querySelector('#aboutdetails'); 
+            const educontent = document.querySelector('#educdetails'); 
+            const orgcontent = document.querySelector('#orgdetails'); 
+            const workcontent = document.querySelector('#workdetails');
+            const projectcontent = document.querySelector('#projectdetails');
+
+            // create element and render about
+            function renderAbout(doc){
+                let aboutdetails = document.createElement('p');
+                let intro = document.createElement('span'); 
+
+                aboutdetails.setAttribute('data-id', doc.id); 
+                intro.textContent = doc.data().value; 
+
+                aboutcontent.appendChild(intro); 
+            }
+
+            // create element and render education
+            function renderEducation(doc){
+                let educdetails = document.createElement('p');
+                let level = document.createElement('span'); 
+                let school = document. createElement('span'); 
+                let educstart = document.createElement('span'); 
+                let educend = document.createElement('span');
+
+                level.id = "educid1";
+                school.id = "educid2";  
+                educstart.id = "educid3"; 
+                educend.id = "educid4"; 
+
+                educdetails.setAttribute('data-id', doc.id); 
+                level.textContent = doc.data().Level; 
+                school.textContent = doc.data().School; 
+                educstart.textContent = doc.data().Start_Year;
+                educend.textContent = doc.data().End_Year; 
+
+                educontent.appendChild(educdetails); 
+                educontent.appendChild(level); 
+                educontent.appendChild(school); 
+                educontent.appendChild(educstart); 
+                educontent.appendChild(educend); 
+            }
+
+            // create element and render organization
+            function renderOrganization(doc){
+                let orgdetails = document.createElement('p');
+                let orgname = document.createElement('div'); 
+                let orgposition = document. createElement('div'); 
+                let orgstart = document.createElement('div'); 
+                let orgend = document.createElement('div');
+
+                orgname.id = "orgid1";
+                orgposition.id = "orgid2";  
+                orgstart.id = "orgtid3"; 
+                orgend.id = "orgid4";
+
+                orgdetails.setAttribute('data-id', doc.id); 
+                orgname.textContent = doc.data().name; 
+                orgposition.textContent = doc.data().position; 
+                orgstart.textContent = doc.data().Start_Year;
+                orgend.textContent = doc.data().End_Year; 
+
+                orgcontent.appendChild(orgname); 
+                orgcontent.appendChild(orgposition); 
+                orgcontent.appendChild(orgstart); 
+                orgcontent.appendChild(orgend); 
+            }
+
+            // create element and render work
+            function renderWork(doc){
+                let workdetails = document.createElement('p');
+                let workname = document.createElement('span'); 
+                let workposition = document. createElement('span'); 
+                let workstart = document.createElement('span'); 
+                let workend = document.createElement('span');
+
+                workname.id = "workid1";
+                workposition.id = "workid2";  
+                workstart.id = "workid3"; 
+                workend.id = "workid4";
+
+                workdetails.setAttribute('data-id', doc.id); 
+                workname.textContent = doc.data().name; 
+                workposition.textContent = doc.data().position; 
+                workstart.textContent = doc.data().Start_Year;
+                workend.textContent = doc.data().End_Year; 
+
+                workcontent.appendChild(workname); 
+                workcontent.appendChild(workposition); 
+                workcontent.appendChild(workstart); 
+                workcontent.appendChild(workend); 
+            }
+
+             // create element and render work
+             function renderProject(doc){
+                let projectdetails = document.createElement('p');
+                let projectname = document.createElement('span'); 
+                let language = document. createElement('span'); 
+                
+                projectname.id = "projectid1";
+                language.id = "projectid2";  
+
+                projectdetails.setAttribute('data-id', doc.id); 
+                projectname.textContent = doc.data().name; 
+                language.textContent = doc.data().language; 
+                
+                projectcontent.appendChild(projectname);  
+                projectcontent.appendChild(language); 
+            }
+
+            function renderContacts(doc){
+                let contactdetails = document.createElement('p');
+                let twitter = document.createElement('span'); 
+                let linkedin = document.createElement('span'); 
+                let github = document.createElement('span' ); 
+
+                
+                contactdetails.setAttribute('data-id', doc.id); 
+                twitter.textContent = doc.data().twitter; 
+                linkedin.textContent = doc.data().linkedin; 
+                github.textContent = doc.data().github; 
+
+                document.getElementById('clip1').href = twitter.textContent;
+                document.getElementById('clip2').href = linkedin.textContent;
+                document.getElementById('clip3').href = github.textContent;
+
+            }
+
+             db.collection("others").get().then(function(snapshot){
+                snapshot.forEach(function(doc){
+                    console.log(doc.data())
+                    renderContacts(doc);  
+                })
+            }); 
+
+            //how to read an object in the database
+            //reading and printing educations
+            db.collection("others").get().then(function(snapshot){
+                snapshot.forEach(function(doc){
+                    console.log(doc.data())
+                    renderAbout(doc);   
+                })
+            }); 
+
+            //reading and printing educations
+            db.collection("educations").get().then(function(snapshot){
+                snapshot.forEach(function(doc){
+                    console.log(doc.data())
+                    renderEducation(doc);  
+                })
+            }); 
+
+            //reading and printing organizations
+            db.collection("organizations").get().then(function(snapshot){
+                snapshot.forEach(function(doc){
+                    console.log(doc.data())
+                    renderOrganization(doc);  
+                })
+            }); 
+
+             //reading and printing work
+             db.collection("works").get().then(function(snapshot){
+                snapshot.forEach(function(doc){
+                    console.log(doc.data())
+                    renderWork(doc);  
+                })
+            });     
+
+            //reading and printing work
+            db.collection("projects").get().then(function(snapshot){
+                snapshot.forEach(function(doc){
+                    console.log(doc.data())
+                    renderProject(doc);  
+                })
+            });     
+
+             //to open the contact hidden form
+             function openContactForm() {
+                 document.getElementById("myContactForm").style.display = "block";
+            }
+
+            // to close the hidden form 
+            function closeContactForm() {
+                document.getElementById("myContactForm").style.display = "none";
+            }
+            
+            //to add the edit to firebase (Contacts)
+            function editContactForm(){
+                var contactEdit = db.collection("others").doc("link");
+
+                var gotlinkedin = document.getElementById("editlinkedinContent").value
+                var gottwitter = document.getElementById("edittwitterContent").value
+                var gotgithub = document.getElementById("editgithubContent").value
+
+                return contactEdit.update({
+                    linkedin: gotlinkedin,  
+                    twitter: gottwitter,
+                    github: gotgithub 
+                }) 
+                .then(function() {
+                    console.log("Document successfully updated!");
+                })
+                .catch(function(error) {
+                    // The document probably doesn't exist.
+                    console.error("Error updating document: ", error);
+                });
+            }
+
+
+            //to open the about hidden form
+            function openAboutForm() {
+                 document.getElementById("myAboutForm").style.display = "block";
+            }
+
+            // to close the hidden form 
+            function closeAboutForm() {
+                document.getElementById("myAboutForm").style.display = "none";
+            }
+            
+            //to add the edit to firebase (About)
+            function editAboutForm(){
+                var aboutEdit = db.collection("others").doc("intro");
+                var gotAbout = document.getElementById("editAboutContent").value
+
+                return aboutEdit.update({
+                    "value": gotAbout 
+                }) 
+                .then(function() {
+                    console.log("Document successfully updated!");
+                    window.location.href = "editresume.html"; 
+                })
+                .catch(function(error) {
+                    // The document probably doesn't exist.
+                    console.error("Error updating document: ", error);
+                });
+            }
+
+
+            //to open the educ hidden form
+            function openEducForm() {
+                 document.getElementById("myEducForm").style.display = "block";
+            }
+
+            // to close the hidden form 
+            function closeEducForm() {
+                document.getElementById("myEducForm").style.display = "none";
+            }
+            
+            //to add the add to firebase (Education)
+            function editEducForm(){
+                var gotLevel = document.getElementById("editLevelContent").value 
+                var gotSchool = document.getElementById("editNameContent").value 
+                var gotEducStart = document.getElementById("editEducStartContent").value 
+                var gotEducEnd = document.getElementById("editEducEndContent").value 
+
+                db.collection("educations").add({
+                    Level: gotLevel,
+                    School: gotSchool,
+                    Start_Year: gotEducStart,
+                    End_Year: gotEducEnd
+                })
+                .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                    window.location.href = "editresume.html";
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                });
+            }
+
+            //to open the org hidden form
+            function openOrgForm() {
+                 document.getElementById("myOrgForm").style.display = "block";
+            }
+
+            // to close the hidden form 
+            function closeOrgForm() {
+                document.getElementById("myOrgForm").style.display = "none";
+            }
+            
+            //to add the add to firebase (Education)
+            function editOrgForm(){
+                var gotOrgName = document.getElementById("editOrgNameContent").value 
+                var gotOrgPosition = document.getElementById("editOrgPositionContent").value 
+                var gotOrgStart = document.getElementById("editOrgStartContent").value 
+                var gotOrgEnd = document.getElementById("editOrgEndContent").value 
+
+                db.collection("organizations").add({
+                    name: gotOrgName,
+                    position: gotOrgPosition,
+                    Start_Year: gotOrgStart,
+                    End_Year: gotOrgEnd
+                })
+                .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                    window.location.href = "editresume.html";
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                });
+            }
+
+
+            //to open the work hidden form
+            function openWorkForm() {
+                 document.getElementById("myWorkForm").style.display = "block";
+            }
+
+            // to close the hidden form 
+            function closeWorkForm() {
+                document.getElementById("myWorkForm").style.display = "none";
+            }
+            
+            //to add the add to firebase (Education)
+            function editWorkForm(){
+                var gotWorkName = document.getElementById("editWorkNameContent").value 
+                var gotWorkPosition = document.getElementById("editWorkPositionContent").value 
+                var gotWorkStart = document.getElementById("editWorkStartContent").value 
+                var gotWorkEnd = document.getElementById("editWorkEndContent").value 
+
+                db.collection("works").add({
+                    name: gotWorkName,
+                    position: gotWorkPosition,
+                    Start_Year: gotWorkStart,
+                    End_Year: gotWorkEnd
+                })
+                .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                    window.location.href = "editresume.html";
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                });
+            }
+
+            //to open the work hidden form
+            function openProjectForm() {
+                 document.getElementById("myProjectForm").style.display = "block";
+            }
+
+            // to close the hidden form 
+            function closeProjectForm() {
+                document.getElementById("myProjectForm").style.display = "none";
+            }
+            
+            //to add the add to firebase (Education)
+            function editProjectForm(){
+                var gotProjectName = document.getElementById("editProjectNameContent").value 
+                var gotLanguage = document.getElementById("editLanguageContent").value 
+
+                db.collection("projects").add({
+                    name: gotProjectName,
+                    language: gotLanguage
+                })
+                .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                    window.location.href = "editresume.html";
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                });
+            }
+
+            //to open the educdelete hidden form
+            function openEducDeleteForm() {
+                 document.getElementById("myEducDeleteForm").style.display = "block";
+            }
+
+            // to close the hidden form 
+            function closeDeleteEducForm() {
+                document.getElementById("myEducDeleteForm").style.display = "none";
+            }
+            
+            //to add the delete to firebase (Education)
+            function deleteEducForm(){
+                var delLevel = document.getElementById("deleteLevelContent").value 
+                var delSchool = document.getElementById("deleteNameContent").value 
+                var delEducStart = document.getElementById("deleteEducStartContent").value 
+                var delEducEnd = document.getElementById("deleteEducEndContent").value 
+                
+            
+
+                db.collection("educations").get().then(function(snapshot){
+                snapshot.forEach(function(doc){
+                    console.log(doc.data())
+
+                    if(delLevel == doc.data().Level && delSchool == doc.data().School && delEducStart == doc.data().Start_Year && delEducEnd == doc.data().End_Year){
+                        var IDeduc = doc.id
+
+                        db.collection("educations").doc(IDeduc).delete().then(function(){
+                            console.log("item deleted"); 
+                         }).catch(function(err){
+                             console.log("error in deleting item: " + err);
+                        });
+                    }
+                 })
+            }); 
+            }
+
+            //to open the orgdelete hidden form
+            function openOrgDeleteForm() {
+                 document.getElementById("myOrgDeleteForm").style.display = "block";
+            }
+
+            // to close the hidden form 
+            function closeDeleteOrgForm() {
+                document.getElementById("myOrgDeleteForm").style.display = "none";
+            }
+            
+            //to add the delete to firebase (Organization)
+            function deleteOrgForm(){
+                var delOrgName = document.getElementById("deleteOrgNameContent").value 
+                var delOrgPosition = document.getElementById("deleteOrgPositionContent").value 
+                var delOrgStart = document.getElementById("deleteOrgStartContent").value 
+                var delOrgEnd = document.getElementById("deleteOrgEndContent").value 
+
+                db.collection("organizations").get().then(function(snapshot){
+                    snapshot.forEach(function(doc){
+                    console.log(doc.data())
+                    console.log(doc.id)
+
+                    if(delOrgName == doc.data().name && delOrgPosition == doc.data().position && delOrgStart == doc.data().Start_Year && delOrgEnd == doc.data().End_Year){
+                        var IDorg = doc.id
+
+                        db.collection("organizations").doc(IDorg).delete().then(function(){
+                            console.log("item deleted"); 
+                         }).catch(function(err){
+                             console.log("error in deleting item: " + err);
+                        });
+                    } 
+                 })
+            }); 
+            }
+
+             //to open the workdelete hidden form
+             function openWorkDeleteForm() {
+                 document.getElementById("myWorkDeleteForm").style.display = "block";
+            }
+
+            // to close the hidden form 
+            function closeDeleteWorkForm() {
+                document.getElementById("myWorkDeleteForm").style.display = "none";
+            }
+            
+            //to add the delete to firebase (Organization)
+            function deleteWorkForm(){
+                var delWorkName = document.getElementById("deleteWorkNameContent").value 
+                var delWorkPosition = document.getElementById("deleteWorkPositionContent").value 
+                var delWorkStart = document.getElementById("deleteWorkStartContent").value 
+                var delWorkEnd = document.getElementById("deleteWorkEndContent").value 
+
+                db.collection("works").get().then(function(snapshot){
+                    snapshot.forEach(function(doc){
+                    console.log(doc.data())
+                    console.log(doc.id)
+
+                    if(delWorkName == doc.data().name && delWorkPosition == doc.data().position && delWorkStart == doc.data().Start_Year && delWorkEnd == doc.data().End_Year){
+                        var IDwork = doc.id
+
+                        db.collection("works").doc(IDwork).delete().then(function(){
+                            console.log("item deleted"); 
+                         }).catch(function(err){
+                             console.log("error in deleting item: " + err);
+                        });
+                    } 
+                 })
+            }); 
+            }
+
+            //to open the projectdelete hidden form
+            function openProjectDeleteForm() {
+                 document.getElementById("myProjectDeleteForm").style.display = "block";
+            }
+
+            // to close the hidden form 
+            function closeProjectDeleteForm() {
+                document.getElementById("myProjectDeleteForm").style.display = "none";
+            }
+            
+            //to add the delete to firebase (Organization)
+            function deleteProjectForm(){
+                var delProjectName = document.getElementById("deleteProjectNameContent").value 
+                var delLanguage = document.getElementById("deleteLanguageContent").value 
+
+                db.collection("projects").get().then(function(snapshot){
+                    snapshot.forEach(function(doc){
+                    console.log(doc.data())
+                    console.log(doc.id)
+
+                    if(delProjectName == doc.data().name && delLanguage == doc.data().language){
+                        var IDproj = doc.id
+
+                        db.collection("projects").doc(IDproj).delete().then(function(){
+                            console.log("item deleted"); 
+                         }).catch(function(err){
+                             console.log("error in deleting item: " + err);
+                        });
+                    } 
+                 })
+            }); 
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+        <style>
+            body{
+                background-color: paleturquoise;
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 500px 1fr;
+                grid-template-rows: 1fr 5fr 1fr;
+            }
+
+            #logintitle{
+                font-family: 'Nunito';
+                font-size: 30px;
+                font-weight: 1000;
+                display: flex;
+                justify-content: center; 
+                margin-top: 0px;
+                grid-column: 2;
+                grid-row: 2;
+            }
+
+            #logincontent{
+                font-family: 'Nunito';
+                font-size: 20px;
+                justify-content: center; 
+                margin-top: 0px;
+                grid-column: 2;
+                grid-row: 2;
+            }
+
+            #label{
+                font-family: 'Nunito';
+                font-size: 20px;
+            }
+
+            input[type=email] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            grid-column: 2;
+            grid-row: 2;
+            }
+
+            input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            grid-column: 2;
+            grid-row: 2;
+            }
+
+            #credentials{
+                background-color: pink;
+                grid-column: 2;
+                justify-content: center;
+                align-content: center;
+                grid-row: 2;
+                padding: 20px;
+                border-radius: 10%;
+            }
+
+            #loginbutton{ 
+            font-family: 'Nunito';
+            font-size: 15px;
+            width: 30%;
+            background-color: black;
+            color: pink;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: flex;
+            grid-column: 2;
+            grid-row: 2;
+            justify-content: center;
+            border-radius: 10%;
+            cursor: pointer;
+            }
+
+            #loginbutton:hover{
+                background-color:gray;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="credentials">
+            <div id="logintitle">LOGIN</div>
+             <form id="logincontent">
+                 <br> <br> 
+                 <label for="email" id="label">Email</label>
+                 <input type="email" placeholder="Enter Email" id="inputemail">
+                 <br> <br>
+                 <label for="password" id="label">Password</label>
+                 <input type="password" placeholder="Enter Password" id="inputpassword">
+            </form>   
+            <button type="button" onclick="javascript:submitlogin()"  id="loginbutton"> Submit </button>
+        </div>
+            
+
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyAWcLh0jnKBQ7KsKCv-nGwUNqtbdBaoyrk",
+                authDomain: "website-resume-359ea.firebaseapp.com",
+                databaseURL: "https://website-resume-359ea.firebaseio.com",
+                projectId: "website-resume-359ea",
+                storageBucket: "website-resume-359ea.appspot.com",
+                messagingSenderId: "453404643227",
+                appId: "1:453404643227:web:37d94019df365252625b3e",
+                measurementId: "G-CBK5H47QQ7"
+            };
+
+            
+            // Initialize Firebase
+            var defaultProject = firebase.initializeApp(firebaseConfig);
+            
+            var db = firebase.firestore(); 
+
+            
+            //for authentication username/password
+            function submitlogin(){
+                var gotemail =  document.getElementById('inputemail').value;  
+                var gotpassword = document.getElementById('inputpassword').value; 
+
+                firebase.auth().signInWithEmailAndPassword(gotemail, gotpassword).then(function(user){
+                window.location.href = "editresume.html"; 
+
+                //how to get info about user 
+                var user = firebase.auth().currentUser; 
+                if(user!=null){
+                    console.log(user.email);
+                }
+            }).catch(function(err){
+                if(err.code == "auth/wrong-password"){
+                    alert("wrong password")
+                }else{
+                    alert(err.message);
+                }
+            })
+            }
+           
+
+
+        </script> 
+    </body>
+</html>

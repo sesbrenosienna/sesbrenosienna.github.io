@@ -1,0 +1,624 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: paleturquoise;
+}
+
+.background{
+    background-image: url(container_background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width:100%;
+    height:60%;
+    display: grid; 
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 250px 0.5fr 1fr; 
+}
+
+#contactbutton{ 
+    font-family: 'Nunito';
+    cursor: pointer;
+    grid-row: 4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    align-items: center;
+    align-self: center;
+    padding: 10px;
+    border-radius: 10%;
+    margin-left: 20px;
+}
+
+#contactbutton:hover{ 
+    background-color: pink;
+}
+
+.contact{
+    display: flex;
+    grid-row: 4;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+}
+
+#clip{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+}
+
+
+.menu{
+    background-color: paleturquoise;
+    position: fixed;
+    width: 99%;
+    font-family: 'Nunito';
+    font-size: 20px;
+    display: flex; 
+    margin-top: -10px;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.category{
+    cursor: pointer;
+    padding: 20px;
+    color: black;
+    text-decoration: underline;
+}
+
+.circle{
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mypic{
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.name{
+    font-family: 'Nunito';
+    color:black;
+    font-size: 30px;
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contact{
+    display: flex;
+    justify-content: center;
+}
+
+#clip{
+   padding: 20px;
+   border-radius: 50%;  
+} 
+
+#icon{
+    width: 60px;
+}
+
+#first{
+    background-color: #faf9f8;
+    width:100%;
+    display: grid;
+     flex-wrap: wrap;
+    grid-template-rows: o.5fr 2fr;
+    grid-template-columns: 2fr 500px 2fr;
+}
+
+#about{
+    font-family: 'Nunito';
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+    padding: 20px;
+    grid-row: 1;
+    grid-column: 1/4;
+    justify-content: flex-start;
+} 
+
+#aboutdetails{
+    background-color:  #faf9f8;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 2;
+    grid-column: 2; 
+    text-align: center;
+}
+
+#editbutton{
+    cursor: pointer;
+    background-color:  #faf9f8;
+    font-family: 'Nunito';
+    font-size: 20px;
+    width: 30%;
+    height:20%;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 2;
+    grid-column: 3;
+    justify-content: center;
+    border-radius: 10%;
+    margin-left: 20px;
+    align-self: flex-end;
+}
+
+
+#editbutton:hover{
+    background-color:pink;
+}
+
+
+#educDeletebutton{
+    cursor: pointer;
+    background-color:  #faf9f8;
+    font-family: 'Nunito';
+    font-size: 20px;
+    width: 30%;
+    height:15%;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 2;
+    grid-column: 3;
+    justify-self: flex-end;
+    justify-content: center;
+    align-self: flex-end;
+    border-radius: 10%;
+    margin-right: 35%;
+}
+
+{box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: paleturquoise;
+  color: black;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: pink;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#second{
+     background-color: #faf9f8;
+     width:100%;
+     display: grid;
+      flex-wrap: wrap;
+     grid-template-rows: o.5fr 2fr;
+     grid-template-columns: 2fr 600px 2fr;
+}  
+
+#educ{
+    font-family: 'Nunito';
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+    padding: 20px;
+    grid-row: 1;
+    grid-column: 1/4;
+    justify-content: flex-start;
+}  
+
+#educdetails{
+    background-color:  #faf9f8;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 2;
+    grid-column: 2; 
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 2fr 4fr 1fr 1fr;
+}
+
+.design{
+    font-family: 'Nunito';
+    font-size: 20px;
+    color: black;
+}
+
+#educid1{ 
+    display: grid;
+    grid-column: 1;
+}
+
+#educid2{ 
+    display: grid;
+    grid-column: 2;
+}
+
+#educid3{ 
+    display: grid;
+    grid-column: 3;
+    justify-content: center;
+}
+
+#educid4{ 
+    display: grid;
+    grid-column: 4;
+    justify-content: center;
+}
+
+#educbutton{
+    cursor: pointer;
+    background-color:  #faf9f8;
+    font-family: 'Nunito';
+    font-size: 20px;
+    width: 30%;
+    height:15%;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 2;
+    grid-column: 3;
+    align-self: flex-end;
+    justify-content: center;
+    border-radius: 10%;
+}
+
+#educbutton:hover{
+    background-color:pink;
+}
+
+#schoologo{
+    grid-row: 2;
+    grid-column: 1;
+    justify-self: center;
+    align-self: center;
+}
+
+#third{
+    background-color: #faf9f8;
+    width:100%;
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-rows: o.5fr 2fr;
+    grid-template-columns: 2fr 4fr 2fr 2fr;
+} 
+
+#orglogo{
+    grid-row: 2;
+    grid-column: 4;
+    justify-self: center;
+    align-self: center;
+}
+
+#org{
+    font-family: 'Nunito';
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+    padding: 20px;
+    grid-row: 1;
+    grid-column: 1/4;
+    justify-content: flex-start; 
+} 
+
+#orgdetails{
+    background-color:  #faf9f8;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 2;
+    grid-column: 1/4; 
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 3fr 3fr 1fr 1fr;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#orgid1{ 
+    display: grid;
+    grid-column: 1;
+}
+
+#orgid2{ 
+    display: grid;
+    grid-column: 2;
+}
+
+#orgid3{ 
+    display: grid;
+    grid-column: 3;
+    justify-content: center;
+}
+
+#orgid4{ 
+    display: grid;
+    grid-column: 4;
+    justify-content: center;
+}
+
+#orgbutton{
+    cursor: pointer;
+    background-color:  #faf9f8;
+    font-family: 'Nunito';
+    font-size: 20px;
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 2;
+    grid-column: 4;
+    justify-content: center;
+    align-self: flex-end;
+    border-radius: 10%;
+
+}
+
+#orgbutton:hover{
+    background-color:pink;
+}
+
+#educOrgbutton{
+    cursor: pointer;
+    background-color:  #faf9f8;
+    font-family: 'Nunito';
+    font-size: 20px;
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 2;
+    grid-column: 4;
+    justify-content: center;
+    justify-self: flex-end;
+    align-self: flex-end;
+    border-radius: 10%; 
+    margin-right: 10%; 
+}
+
+#fourth{
+    background-color: #faf9f8;
+    width:100%;
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-rows: o.5fr 2fr;
+    grid-template-columns: 2fr 650px 2fr;
+} 
+
+#work{
+    font-family: 'Nunito';
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+    padding: 20px;
+    grid-row: 1;
+    grid-column: 1/4;
+    justify-content: flex-start;
+    
+} 
+
+#workid1{ 
+    display: grid;
+    grid-column: 1;
+}
+
+#workid2{ 
+    display: grid;
+    grid-column: 2;
+}
+
+#workid3{ 
+    display: grid;
+    grid-column: 3;
+    justify-content: center;
+}
+
+#workid4{ 
+    display: grid;
+    grid-column: 4;
+    justify-content: center;
+}
+
+#workdetails{
+    background-color:  #faf9f8;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 2;
+    grid-column: 2; 
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 5fr 3fr 1fr 1fr;
+}
+
+#workbutton{
+    cursor: pointer;
+    background-color:  #faf9f8;
+    font-family: 'Nunito';
+    font-size: 20px;
+    width: 30%;
+    height: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 2;
+    grid-column: 3;
+    justify-content: center;
+    align-self: flex-end;
+    border-radius: 10%;
+    }
+
+#workbutton:hover{
+    background-color:pink;
+}
+
+#deleteWorkbutton{
+    cursor: pointer;
+    background-color:  #faf9f8;
+    font-family: 'Nunito';
+    font-size: 20px;
+    width: 30%;
+    height:60%;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 2;
+    grid-column: 3;
+    justify-content: center;
+    justify-self: flex-end;
+    align-self: flex-end;
+    border-radius: 10%;
+    margin-right: 10%;
+}
+
+#fifth{
+    background-color: #faf9f8;
+    width:100%;
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-rows: o.5fr 2fr;
+    grid-template-columns: 2fr 500px 2fr;
+} 
+
+#project{
+    font-family: 'Nunito';
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+    padding: 20px;
+    grid-row: 1;
+    grid-column: 1/4;
+    justify-content: flex-start;
+    
+} 
+
+#projectdetails{
+    background-color:  #faf9f8;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 2;
+    grid-column: 2; 
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+}
+
+#projectid1{ 
+    display: grid;
+    grid-column: 1;
+}
+
+#projectid2{ 
+    display: grid;
+    grid-column: 2;
+}
+
+#projectbutton{
+    cursor: pointer;
+    background-color:  #faf9f8;
+    font-family: 'Nunito';
+    font-size: 20px;
+    width: 20%;
+    height:30%;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 2;
+    grid-column: 3;
+    justify-content: center;
+    align-self: flex-end;
+    border-radius: 10%;
+   
+}
+
+#projectbutton:hover{
+    background-color:pink;
+}
+
+#deleteProjectbutton{
+    cursor: pointer;
+    background-color:  #faf9f8;
+    font-family: 'Nunito';
+    font-size: 20px;
+    width: 20%;
+    height:30%;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 2;
+    grid-column: 3;
+    justify-content: center;
+    justify-self: flex-end;
+    align-self: flex-end;
+    border-radius: 10%; 
+    margin-right: 35%;
+
+}
+
+.footer{
+    display: grid; 
+    grid-template-rows: 2fr 2fr;
+    flex-wrap: wrap;
+}
+
+#top{
+    background-color:paleturquoise;
+    width: 100%;
+    font-family: 'Nunito';
+    font-size: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
